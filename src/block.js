@@ -74,7 +74,7 @@ class Block {
         let self = this;
         return new Promise((resolve, reject) => {
             if (this.height != 0) {
-                const decodedData = new Buffer(self.body, 'hex');
+                const decodedData = hex2ascii(self.body);
                 const parsedData = JSON.parse(decodedData);
                 resolve(parsedData);
             } else {
